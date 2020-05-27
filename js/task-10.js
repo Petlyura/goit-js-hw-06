@@ -90,12 +90,11 @@ const users = [
 ];
 
 const getSortedUniqueSkills = users => {
-  const skills = users.reduce((allSkills, user) => {
-    allSkills.push(...user.skills);
-    return allSkills;
-  }, []);
-
-  return skills
+  return users
+    .reduce((allSkills, user) => {
+      allSkills.push(...user.skills);
+      return allSkills;
+    }, [])
     .filter((currentValue, index, arr) => arr.indexOf(currentValue) === index)
     .sort();
 };

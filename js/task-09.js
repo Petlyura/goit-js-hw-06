@@ -91,6 +91,7 @@ const users = [
 
 const getNamesSortedByFriendsCount = users => {
   return users
+    .slice()
     .sort((a, b) => a.friends.length - b.friends.length)
     .map(user => user.name);
 };
